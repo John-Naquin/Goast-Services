@@ -3,7 +3,7 @@ import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 
 export function Contact() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gray-100 px-6 sm:px-12 lg:px-24 py-12">
+    <section className="min-h-screen flex items-center justify-center bg-gray-100 px-6 sm:px-12 lg:px-24 py-12 pt-20 sm:pt-24">
       <div className="max-w-4xl w-full bg-white shadow-xl rounded-lg p-6 sm:p-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -87,4 +87,5 @@ export function Contact() {
     </section>
   );
 }
+
 export default Contact;

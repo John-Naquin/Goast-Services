@@ -1,4 +1,4 @@
-function Features() {
+function Services() {
     return (
       <section className="h-screen flex flex-col justify-center items-center bg-white text-center">
         <h2 className="text-4xl font-bold">Our Features</h2>
@@ -14,4 +14,4 @@ function Features() {
     );
   }
   
-  export default Features;
+  export default Services;

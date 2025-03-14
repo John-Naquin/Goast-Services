@@ -1,17 +1,21 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FiMenu, FiX } from 'react-icons/fi';
-import logo from '../images/goast-logo.png';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
+import logo from "../images/goast-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-transparent backdrop-blur-sm z-50 transition-all duration-300">
       <div className="w-full pl-6 sm:pl-10 pr-4 sm:pr-6 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <Link to="/" className="flex items-center space-x-4">
+            <Link to="/" onClick={scrollToTop} className="flex items-center space-x-4 cursor-pointer">
               <img 
                 src={logo} 
                 alt="Goast Logo" 
@@ -24,8 +28,7 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex items-center space-x-10">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/features">Features</NavLink>
-            <NavLink to="/pricing">Pricing</NavLink>
+            <NavLink to="/services">Services</NavLink>
             <NavLink to="/contact">Contact</NavLink>
           </div>
           <button
@@ -35,11 +38,14 @@ const Navbar = () => {
             {isOpen ? <FiX className="w-10 h-10" /> : <FiMenu className="w-10 h-10" />}
           </button>
         </div>
-        <div className={`md:hidden absolute top-full left-0 w-full bg-black/80 backdrop-blur-lg transition-all duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+        <div
+          className={`md:hidden absolute top-full left-0 w-full bg-black/80 backdrop-blur-lg transition-all duration-300 ${
+            isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
+        >
           <div className="flex flex-col items-center py-4 space-y-5">
             <MobileNavLink to="/" onClick={() => setIsOpen(false)}>Home</MobileNavLink>
-            <MobileNavLink to="/features" onClick={() => setIsOpen(false)}>Features</MobileNavLink>
-            <MobileNavLink to="/pricing" onClick={() => setIsOpen(false)}>Pricing</MobileNavLink>
+            <MobileNavLink to="/services" onClick={() => setIsOpen(false)}>Services</MobileNavLink>
             <MobileNavLink to="/contact" onClick={() => setIsOpen(false)}>Contact</MobileNavLink>
           </div>
         </div>

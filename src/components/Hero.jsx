@@ -11,14 +11,14 @@ const slides = [
     description: "We provide top-notch services to help your business grow.",
     image: image1,
     buttonText: "Learn More",
-    buttonLink: "/contact",
+    buttonLink: "/services",
   },
   {
     title: "Preventative Maintenance & Contracts",
     description: "Stay ahead of downtime with our tailored solutions.",
     image: image2,
     buttonText: "Our Services",
-    buttonLink: "/contact",
+    buttonLink: "/services",
   },
   {
     title: "Troubleshooting & Problem Restoration",

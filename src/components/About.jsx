@@ -49,7 +49,6 @@ export function About() {
                   transition-shadow
                 "
               >
-                {/* Brand "dot" bullet */}
                 <div className="flex-shrink-0 w-6 h-6 bg-brandGold/10 rounded-full flex items-center justify-center">
                   <div className="w-2 h-2 bg-brandGold rounded-full" />
                 </div>

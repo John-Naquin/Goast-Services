@@ -24,15 +24,11 @@ export function Contact() {
           >
             <div className="flex items-center space-x-4">
               <FiMail className="text-brandGold w-6 h-6" />
-              <p className="text-gray-700 text-lg">info@goastservices.com</p>
+              <p className="text-gray-700 text-lg">Kimmies@goastservices.com</p>
             </div>
             <div className="flex items-center space-x-4">
               <FiPhone className="text-brandGold w-6 h-6" />
-              <p className="text-gray-700 text-lg">+1 (555) 123-4567</p>
-            </div>
-            <div className="flex items-center space-x-4">
-              <FiMapPin className="text-brandGold w-6 h-6" />
-              <p className="text-gray-700 text-lg">123 Business Rd, City, State, ZIP</p>
+              <p className="text-gray-700 text-lg">+1 (850) 982-7559</p>
             </div>
           </motion.div>
 

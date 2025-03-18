@@ -19,7 +19,7 @@ export function WhyGoastServices() {
           className="relative"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }} 
+          viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight font-serif text-brandGold">
@@ -35,16 +35,16 @@ export function WhyGoastServices() {
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
         >
           <p>
-            At <strong className="text-brandGold">Goast Services</strong>, we go beyond standard automation solutions by delivering customized, high-performance strategies tailored to the unique needs of each facility. With over 21 years of expertise, we have built a proven reputation for excellence, helping clients maintain operational efficiency, reduce costs, and ensure long-term reliability.
+            At <strong className="text-brandGold">Goast Services</strong>, we deliver customized, high-performance automation strategies tailored to each facility’s needs. With 21+ years of expertise, we help clients optimize operations, reduce costs, and ensure long-term reliability.
           </p>
           <p>
-            As an <strong>8(a) certified, veteran-owned company</strong>, we are mission-ready and fully compliant with government contracting requirements, ensuring seamless service delivery for federal, state, and commercial clients. Our approach integrates precision-driven automation with advanced programming, allowing facilities to operate at peak performance.
+            As an <strong>8(a) certified, veteran-owned company</strong>, we’re fully compliant with government requirements, serving federal, state, and commercial clients. Our precision-driven approach ensures top-level performance across all facilities.
           </p>
           <p>
-            We take pride in our trusted partnerships with licensed electrical and mechanical contractors, guaranteeing that all work meets industry regulations and safety standards. With a <strong>100% client retention rate</strong>, we are dedicated to building lasting relationships through reliable service, 24/7 support, and innovative automation solutions that adapt to evolving facility needs.
+            We partner with licensed contractors to guarantee compliance with industry standards. With a <strong>100% client retention rate</strong>, we offer reliable service, 24/7 support, and adaptable automation solutions.
           </p>
           <p>
-            By choosing Goast Services, you gain a trusted partner who is committed to helping you control, optimize, and maintain your facility's efficiency and performance.
+            Choose Goast Services to control, optimize, and maintain your facility’s performance.
           </p>
         </motion.div>
 
@@ -101,16 +101,14 @@ export function WhyGoastServices() {
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
         >
-       
-        {/* 
-        <Link
-          to="/contact"
-          className="inline-block px-8 py-3 text-lg font-semibold text-white bg-brandGold rounded-full hover:bg-amber-600 transition-colors duration-300"
-        >
-          Get Started Today
-        </Link>
-        */}
-       
+          {/* Uncomment if you want a button here:
+          <Link
+            to="/contact"
+            className="inline-block px-8 py-3 text-lg font-semibold text-white bg-brandGold rounded-full hover:bg-amber-600 transition-colors duration-300"
+          >
+            Get Started Today
+          </Link>
+          */}
         </motion.div>
       </div>
     </section>

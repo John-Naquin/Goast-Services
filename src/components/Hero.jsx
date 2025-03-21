@@ -83,32 +83,29 @@ export function Hero() {
           transition={{ duration: 0.4 }}
           className="absolute inset-0 w-full h-full"
         >
-          <img
+          <motion.img
             src={slides[index].image}
-            alt="Background"
+            alt=""
             className="absolute inset-0 w-full h-full object-cover"
+            initial={{ scale: 1.05 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.2 }}
           />
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute bottom-20 sm:bottom-0 left-4 right-4 sm:left-8 sm:right-auto lg:left-24 lg:bottom-8 px-4 pb-4 sm:pb-8 lg:pb-12 max-w-2xl">
-            <div className="bg-black/60 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8">
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-brandGold leading-snug sm:leading-tight">
-                  {slides[index].title}
-                </h1>
-                <p className="mt-2 sm:mt-3 lg:mt-4 text-sm sm:text-base lg:text-lg xl:text-xl text-gray-100">
-                  {slides[index].description}
-                </p>
-              </motion.div>
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="mt-4 sm:mt-5 lg:mt-6"
-              >
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/20 to-black/70" />
+          <div className="absolute bottom-20 sm:bottom-10 left-4 right-4 sm:left-8 lg:left-24 px-4 pb-4 sm:pb-8 lg:pb-10 max-w-2xl">
+            <motion.div
+              className="backdrop-blur-md bg-black/60 border border-brandGold/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl"
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-brandGold leading-snug sm:leading-tight">
+                {slides[index].title}
+              </h1>
+              <p className="mt-2 sm:mt-3 lg:mt-4 text-sm sm:text-base lg:text-lg xl:text-xl text-gray-100">
+                {slides[index].description}
+              </p>
+              <div className="mt-4 sm:mt-5 lg:mt-6">
                 <Link
                   to={slides[index].buttonLink}
                   className="inline-flex items-center bg-brandGold/90 hover:bg-brandGold border-2 border-brandGold/80 px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-md sm:rounded-lg transition-all group"
@@ -118,8 +115,8 @@ export function Hero() {
                   </span>
                   <FiChevronRight className="text-brandDark w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 transition-transform group-hover:translate-x-1" />
                 </Link>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </AnimatePresence>
@@ -127,13 +124,13 @@ export function Hero() {
       <div className="hidden sm:flex items-center justify-between absolute inset-x-0 top-1/2 -translate-y-1/2 px-4">
         <button
           onClick={prevSlide}
-          className="p-2 sm:p-3 bg-brandGold/90 hover:bg-brandGold border-2 border-brandGold/80 rounded-lg transition-all shadow-lg"
+          className="p-2 sm:p-3 bg-brandGold/90 hover:bg-brandGold border-2 border-brandGold/80 rounded-lg transition-all shadow-xl"
         >
           <FiChevronLeft className="text-brandDark w-6 h-6 sm:w-8 sm:h-8" />
         </button>
         <button
           onClick={nextSlide}
-          className="p-2 sm:p-3 bg-brandGold/90 hover:bg-brandGold border-2 border-brandGold/80 rounded-lg transition-all shadow-lg"
+          className="p-2 sm:p-3 bg-brandGold/90 hover:bg-brandGold border-2 border-brandGold/80 rounded-lg transition-all shadow-xl"
         >
           <FiChevronRight className="text-brandDark w-6 h-6 sm:w-8 sm:h-8" />
         </button>

@@ -5,7 +5,7 @@ import image1 from "../images/1.jpg";
 
 export function About() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-8 lg:px-24 py-10 sm:py-14 md:py-16 bg-gray-50">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-8 lg:px-24 py-10 sm:py-14 md:py-16 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
         <motion.div
           className="space-y-5"
@@ -17,12 +17,10 @@ export function About() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight font-serif text-brandGold">
             About Goast Services
           </h2>
-
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
             At <strong className="text-brandGold">Goast Services</strong>, we specialize in delivering
             <span className="font-semibold text-gray-900"> tailored automation solutions</span> that empower organizations to:
           </p>
-
           <motion.ul
             className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6"
             initial={{ opacity: 0, y: 30 }}
@@ -37,19 +35,10 @@ export function About() {
               "Enhance system reliability",
               "Implement smart controls",
               "Future-proof infrastructure",
-            ].map((item, index) => (
+            ].map((item, i) => (
               <li
-                key={index}
-                className="
-                  flex items-center gap-3
-                  p-4
-                  bg-white
-                  border-l-4 border-brandGold
-                  shadow-sm
-                  rounded-lg
-                  hover:shadow-md
-                  transition-shadow
-                "
+                key={i}
+                className="flex items-center gap-3 p-4 bg-white border-l-4 border-brandGold shadow-sm rounded-lg hover:shadow-md transition-shadow"
               >
                 <div className="flex-shrink-0 w-6 h-6 bg-brandGold/10 rounded-full flex items-center justify-center">
                   <div className="w-2 h-2 bg-brandGold rounded-full" />
@@ -60,8 +49,6 @@ export function About() {
               </li>
             ))}
           </motion.ul>
-
-          {/* Updated button area */}
           <motion.div
             className="pt-4 sm:pt-6"
             initial={{ y: 20, opacity: 0 }}
@@ -71,18 +58,7 @@ export function About() {
           >
             <Link
               to="/services"
-              className="
-                inline-flex items-center
-                bg-brandGold/90
-                hover:bg-brandGold
-                border-2 border-brandGold/80
-                px-4 py-2
-                sm:px-6 sm:py-3
-                lg:px-8 lg:py-4
-                rounded-md sm:rounded-lg
-                transition-all
-                group
-              "
+              className="inline-flex items-center bg-brandGold/90 hover:bg-brandGold border-2 border-brandGold/80 px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-md sm:rounded-lg transition-all group"
             >
               <span className="text-brandDark text-sm sm:text-base lg:text-lg font-semibold mr-2 sm:mr-3">
                 Explore Our Solutions
@@ -91,20 +67,22 @@ export function About() {
             </Link>
           </motion.div>
         </motion.div>
-
         <motion.div
           className="relative h-80 sm:h-96 md:h-[36rem] rounded-2xl overflow-hidden shadow-xl"
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 1.05 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <img
+          <motion.img
             src={image1}
-            alt="Automation systems"
+            alt=""
             className="w-full h-full object-cover"
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.2 }}
           />
-          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/60 to-transparent">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 sm:p-6">
             <p className="text-white text-sm sm:text-base md:text-lg font-light">
               "Precision-engineered solutions for modern infrastructure"
             </p>

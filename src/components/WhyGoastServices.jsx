@@ -101,7 +101,7 @@ export function WhyGoastServices() {
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
         >
-          {/* Uncomment if you want a button here:
+          {/* 
           <Link
             to="/contact"
             className="inline-block px-8 py-3 text-lg font-semibold text-white bg-brandGold rounded-full hover:bg-amber-600 transition-colors duration-300"

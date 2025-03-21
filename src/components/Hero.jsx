@@ -74,11 +74,7 @@ export function Hero() {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="absolute top-6 right-4 sm:right-8 lg:right-16 z-30 flex items-center space-x-2 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">
-        <span className="text-brandGold font-bold">{index + 1}</span>
-        <span className="text-white/70">/</span>
-        <span className="text-white/70">{slides.length}</span>
-      </div>
+
       
       <AnimatePresence mode="wait">
         <motion.div

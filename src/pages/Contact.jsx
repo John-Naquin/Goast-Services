@@ -156,6 +156,7 @@ export function Contact() {
         </div>
       </div>
     </section>
+    
   );
 }
 

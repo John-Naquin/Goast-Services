@@ -2,6 +2,13 @@ import { Link } from "react-router-dom";
 import { FaTwitter, FaLinkedin, FaFacebookF, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock, FaHeadset } from "react-icons/fa";
 
 export function Footer() {
+  const handleServiceClick = (index) => {
+    localStorage.setItem('selectedServiceIndex', index);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  };
+
   return (
     <footer className="relative bg-gray-900 text-gray-200 pt-16 pb-8 overflow-hidden">
       <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -15,10 +22,10 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-8">
           <div className="md:col-span-5 lg:col-span-4">
-            <Link to="/" className="inline-block">
+            <Link to="/" className="inline-block" onClick={() => window.scrollTo(0, 0)}>
               <div className="flex items-center">
                 <div className="bg-gradient-to-r from-brandGold to-amber-500 p-0.5 rounded-lg">
-                  <div className="bg-gray-900 p-1 rounded-md">
+                  <div className="bg-brandDark p-1 rounded-md">
                     <h2 className="text-xl sm:text-2xl font-bold tracking-wide text-brandGold">
                       GOAST
                     </h2>
@@ -34,11 +41,15 @@ export function Footer() {
             <div className="mt-6 space-y-3">
               <div className="flex items-center">
                 <FaPhoneAlt className="text-brandGold mr-3 flex-shrink-0" />
-                <span className="text-sm text-gray-300">+1 (850) 982-7559</span>
+                <span className="text-sm text-gray-300">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center">
                 <FaEnvelope className="text-brandGold mr-3 flex-shrink-0" />
-                <span className="text-sm text-gray-300">Kimmies@goastservices.com</span>
+                <span className="text-sm text-gray-300">info@goastservices.com</span>
+              </div>
+              <div className="flex items-start">
+                <FaMapMarkerAlt className="text-brandGold mr-3 mt-1 flex-shrink-0" />
+                <span className="text-sm text-gray-300">123 Automation Way, Suite 100<br />Tech City, CA 91234</span>
               </div>
             </div>
           </div>
@@ -50,19 +61,19 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/home" className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
+                <Link to="/" className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1" onClick={() => window.scrollTo(0, 0)}>
                   Home
                 </Link>
               </li>
 
               <li>
-                <Link to="/services" className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
+                <Link to="/services" className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1" onClick={() => window.scrollTo(0, 0)}>
                   Services
                 </Link>
               </li>
     
               <li>
-                <Link to="/contact" className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
+                <Link to="/contact" className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1" onClick={() => window.scrollTo(0, 0)}>
                   Contact
                 </Link>
               </li>
@@ -76,32 +87,32 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" onClick={() => localStorage.setItem('selectedServiceIndex', '0')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
+                <Link to="/services" onClick={() => handleServiceClick('0')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
                   Building Automation & Controls
                 </Link>
               </li>
               <li>
-                <Link to="/services" onClick={() => localStorage.setItem('selectedServiceIndex', '1')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
+                <Link to="/services" onClick={() => handleServiceClick('1')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
                   Preventative Maintenance
                 </Link>
               </li>
               <li>
-                <Link to="/services" onClick={() => localStorage.setItem('selectedServiceIndex', '2')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
+                <Link to="/services" onClick={() => handleServiceClick('2')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
                   Troubleshooting & Restoration
                 </Link>
               </li>
               <li>
-                <Link to="/services" onClick={() => localStorage.setItem('selectedServiceIndex', '3')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
+                <Link to="/services" onClick={() => handleServiceClick('3')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
                   Remote Monitoring
                 </Link>
               </li>
               <li>
-                <Link to="/services" onClick={() => localStorage.setItem('selectedServiceIndex', '4')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
+                <Link to="/services" onClick={() => handleServiceClick('4')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
                   Electrical Services
                 </Link>
               </li>
               <li>
-                <Link to="/services" onClick={() => localStorage.setItem('selectedServiceIndex', '5')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
+                <Link to="/services" onClick={() => handleServiceClick('5')} className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
                   HVAC Solutions
                 </Link>
               </li>
@@ -138,13 +149,13 @@ export function Footer() {
             <div className="mt-6">
               <h4 className="text-sm font-medium text-gray-300 mb-3">Follow Us</h4>
               <div className="flex space-x-4">
-                <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-brandGold hover:text-gray-900 transition-colors duration-200">
+                <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-brandGold hover:text-brandDark transition-colors duration-200">
                   <FaTwitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-brandGold hover:text-gray-900 transition-colors duration-200">
+                <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-brandGold hover:text-brandDark transition-colors duration-200">
                   <FaLinkedin className="w-5 h-5" />
                 </a>
-                <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-brandGold hover:text-gray-900 transition-colors duration-200">
+                <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-brandGold hover:text-brandDark transition-colors duration-200">
                   <FaFacebookF className="w-5 h-5" />
                 </a>
               </div>
@@ -157,7 +168,7 @@ export function Footer() {
             <div className="w-full border-t border-gray-700"></div>
           </div>
           <div className="relative flex justify-center">
-            <div className="bg-gray-900 px-4">
+            <div className="bg-brandDark px-4">
               <div className="h-5 w-5 rounded-full bg-brandGold/20 flex items-center justify-center">
                 <div className="h-2 w-2 rounded-full bg-brandGold"></div>
               </div>

@@ -47,20 +47,22 @@ export function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div
-            className="relative rounded-2xl overflow-hidden shadow-2xl group z-10"
+            className="relative h-full rounded-2xl overflow-hidden shadow-2xl group z-10"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            style={{ height: "100%" }}
           >
             <div className="absolute inset-0 border-2 border-white/50 rounded-2xl z-10 m-3" />
             <div className="absolute -inset-1 bg-gradient-to-tr from-brandGold/20 to-transparent rounded-2xl blur-sm z-0" />
             
-            <div className="aspect-w-4 aspect-h-3 lg:aspect-h-5 relative z-0">
+            <div className="relative z-0 h-full">
               <img 
                 src={image1} 
                 alt="Goast Services automation solution in action" 
-                className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                style={{ height: "100%", objectFit: "cover" }}
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/40 to-transparent z-10" />
@@ -80,88 +82,46 @@ export function About() {
           </motion.div>
 
           <motion.div
-            className="space-y-8 relative"
+            className="relative h-full"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-brandGold opacity-5 rounded-full blur-3xl" />
-            
-            <div className="space-y-6 relative">
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-brandGold/20 to-transparent blur-sm rounded-lg" />
-                <div className="relative bg-white/80 backdrop-blur-sm p-6 rounded-lg border border-brandGold/10 shadow-md">
-                  <p className="text-xl text-gray-700 leading-relaxed">
-                    At <span className="font-semibold text-brandGold">Goast Services</span>, we provide <span className="font-semibold">customized automation solutions</span> to help <span className="font-semibold">commercial, industrial, institutional, and government organizations</span> operate safely, efficiently, and cost-effectively.
-                  </p>
-                  <p className="text-gray-700 mt-4">
-                    Our expertise in <span className="font-semibold">Building Automation Systems (BAS) integration, lighting controls, and energy efficiency analysis</span> helps clients reduce costs, minimize downtime, and keep critical systems running at peak performance.
-                  </p>
-                  <p className="text-gray-700 mt-4">
-                    Advanced-engineered programming is what allows facilities to control their systems, optimize energy efficiency, and maintain peak performance—because no two operations are the same.
-                  </p>
-                </div>
+            <div className="relative bg-white rounded-xl border border-brandGold/10 shadow-lg p-8 h-full flex flex-col justify-between">
+              <div>
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  At <span className="font-semibold text-brandGold">Goast Services</span>, we provide <span className="font-semibold">customized automation solutions</span> to help <span className="font-semibold">commercial, industrial, institutional, and government organizations</span> operate safely, efficiently, and cost-effectively.
+                </p>
+                <p className="text-gray-700 mt-6">
+                  Our expertise in <span className="font-semibold">Building Automation Systems (BAS) integration, lighting controls, and energy efficiency analysis</span> helps clients reduce costs, minimize downtime, and keep critical systems running at peak performance.
+                </p>
+                <p className="text-gray-700 mt-6">
+                  Advanced-engineered programming is what allows facilities to control their systems, optimize energy efficiency, and maintain peak performance—because no two operations are the same.
+                </p>
               </div>
-            </div>
-
-            <div className="space-y-5 relative z-10">
-              <h3 className="text-xl font-bold text-gray-800 pl-4 border-l-4 border-brandGold">Our solutions empower you to:</h3>
+              
               <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                className="mt-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+                transition={{ delay: 0.6 }}
               >
-                {[
-                  "Operate with maximum safety",
-                  "Boost operational efficiency",
-                  "Reduce energy costs",
-                  "Enhance system reliability",
-                  "Implement smart controls",
-                  "Future-proof infrastructure",
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    className="relative group"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: i * 0.1 }}
+                <div className="relative group inline-block">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-brandGold to-brandGold/50 rounded-lg blur group-hover:blur-md transition-all duration-300" />
+                  <Link
+                    to="/services"
+                    className="relative group inline-flex items-center bg-brandGold hover:bg-brandGold/90 px-6 py-3 rounded-lg shadow-lg hover:shadow-brandGold/20 transition-all duration-300"
                   >
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-brandGold/20 to-transparent opacity-0 group-hover:opacity-100 rounded-lg blur-sm transition-opacity duration-300" />
-                    <div className="flex items-center p-4 bg-white border-l-4 border-brandGold rounded-lg shadow-sm group-hover:shadow-md transition-all duration-300 relative">
-                      <div className="flex-shrink-0 mr-4 w-8 h-8 bg-brandGold/10 rounded-full flex items-center justify-center">
-                        <div className="w-2 h-2 bg-brandGold rounded-full" />
-                      </div>
-                      <span className="text-gray-700 font-medium">{item}</span>
-                    </div>
-                  </motion.div>
-                ))}
+                    <span className="text-white font-semibold mr-2">
+                      Explore Our Solutions
+                    </span>
+                    <FiArrowRight className="text-white w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </motion.div>
             </div>
-
-            <motion.div
-              className="pt-6 relative z-10"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-            >
-              <div className="relative group inline-block">
-                <div className="absolute -inset-1 bg-gradient-to-r from-brandGold to-brandGold/50 rounded-lg blur group-hover:blur-md transition-all duration-300" />
-                <Link
-                  to="/services"
-                  className="relative group inline-flex items-center bg-brandGold hover:bg-brandGold/90 px-6 py-3 rounded-lg shadow-lg hover:shadow-brandGold/20 transition-all duration-300"
-                >
-                  <span className="text-white font-semibold mr-2">
-                    Explore Our Solutions
-                  </span>
-                  <FiArrowRight className="text-white w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

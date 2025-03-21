@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiArrowRight } from "react-icons/fi";
 import image1 from "../images/1.jpg";
 import image2 from "../images/2.jpg";
 
@@ -59,7 +59,7 @@ export function Hero() {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
+    const timer = setInterval(nextSlide, 7000);
     return () => clearInterval(timer);
   }, [index]);
 
@@ -74,78 +74,143 @@ export function Hero() {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
+      <div className="absolute top-6 right-4 sm:right-8 lg:right-16 z-30 flex items-center space-x-2 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">
+        <span className="text-brandGold font-bold">{index + 1}</span>
+        <span className="text-white/70">/</span>
+        <span className="text-white/70">{slides.length}</span>
+      </div>
+      
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.7 }}
           className="absolute inset-0 w-full h-full"
         >
-          <motion.img
-            src={slides[index].image}
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover"
-            initial={{ scale: 1.05 }}
+          <motion.div 
+            className="absolute inset-0"
+            initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 1.2 }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/20 to-black/70" />
-          <div className="absolute bottom-20 sm:bottom-10 left-4 right-4 sm:left-8 lg:left-24 px-4 pb-4 sm:pb-8 lg:pb-10 max-w-2xl">
-            <motion.div
-              className="backdrop-blur-md bg-black/60 border border-brandGold/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl"
-              initial={{ y: 40, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-brandGold leading-snug sm:leading-tight">
-                {slides[index].title}
-              </h1>
-              <p className="mt-2 sm:mt-3 lg:mt-4 text-sm sm:text-base lg:text-lg xl:text-xl text-gray-100">
-                {slides[index].description}
-              </p>
-              <div className="mt-4 sm:mt-5 lg:mt-6">
-                <Link
-                  to={slides[index].buttonLink}
-                  className="inline-flex items-center bg-brandGold/90 hover:bg-brandGold border-2 border-brandGold/80 px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-md sm:rounded-lg transition-all group"
-                >
-                  <span className="text-brandDark text-sm sm:text-base lg:text-lg font-semibold mr-2 sm:mr-3">
-                    {slides[index].buttonText}
-                  </span>
-                  <FiChevronRight className="text-brandDark w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 transition-transform group-hover:translate-x-1" />
-                </Link>
+            transition={{ duration: 6, ease: "easeOut" }}
+          >
+            <motion.img
+              src={slides[index].image}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </motion.div>
+          
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/40 to-black/60" />
+          
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div className="lg:col-span-7 lg:col-start-3">
+                  <motion.h2
+                    className="text-sm sm:text-base uppercase tracking-widest text-brandGold font-medium mb-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    Goast Services
+                  </motion.h2>
+                  
+                  <motion.h1 
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                  >
+                    {slides[index].title}
+                  </motion.h1>
+                  
+                  <motion.div 
+                    className="w-20 h-1.5 bg-brandGold rounded-full my-6"
+                    initial={{ width: 0 }}
+                    animate={{ width: "5rem" }}
+                    transition={{ duration: 0.4, delay: 0.3 }}
+                  />
+                  
+                  <motion.p 
+                    className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    {slides[index].description}
+                  </motion.p>
+                  
+                  <motion.div 
+                    className="mt-8"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                  >
+                    <Link
+                      to={slides[index].buttonLink}
+                      className="group relative inline-flex items-center bg-brandGold hover:bg-brandGold/90 px-6 py-3 sm:px-8 sm:py-4 rounded-lg overflow-hidden transition-all duration-300"
+                    >
+                      <div className="absolute inset-0 flex items-center justify-center w-full h-full">
+                        <div className="h-full w-0 bg-white/20 transition-all duration-300 group-hover:w-full" />
+                      </div>
+                      <span className="text-white text-base sm:text-lg font-semibold mr-2 relative z-10">
+                        {slides[index].buttonText}
+                      </span>
+                      <FiArrowRight className="text-white w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                  </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </AnimatePresence>
 
-      <div className="hidden sm:flex items-center justify-between absolute inset-x-0 top-1/2 -translate-y-1/2 px-4">
-        <button
+      <div className="hidden sm:flex items-center justify-between absolute inset-x-0 top-1/2 -translate-y-1/2 px-8 sm:px-12 lg:px-20 z-20">
+        <motion.button
           onClick={prevSlide}
-          className="p-2 sm:p-3 bg-brandGold/90 hover:bg-brandGold border-2 border-brandGold/80 rounded-lg transition-all shadow-xl"
+          className="p-3 sm:p-4 bg-black/30 hover:bg-brandGold rounded-full transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-transparent"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <FiChevronLeft className="text-brandDark w-6 h-6 sm:w-8 sm:h-8" />
-        </button>
-        <button
+          <FiChevronLeft className="text-white w-6 h-6" />
+        </motion.button>
+        <motion.button
           onClick={nextSlide}
-          className="p-2 sm:p-3 bg-brandGold/90 hover:bg-brandGold border-2 border-brandGold/80 rounded-lg transition-all shadow-xl"
+          className="p-3 sm:p-4 bg-black/30 hover:bg-brandGold rounded-full transition-all duration-300 backdrop-blur-sm border border-white/10 hover:border-transparent"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <FiChevronRight className="text-brandDark w-6 h-6 sm:w-8 sm:h-8" />
-        </button>
+          <FiChevronRight className="text-white w-6 h-6" />
+        </motion.button>
       </div>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
-              i === index ? 'bg-brandGold' : 'bg-white/30 hover:bg-white/50'
-            }`}
-          />
-        ))}
+      <div className="absolute bottom-8 left-0 w-full px-4 sm:px-8 lg:px-16 z-30">
+        <div className="flex w-full h-2 rounded-full overflow-hidden">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setIndex(i)}
+              className="relative flex-1 mx-0.5 first:ml-0 last:mr-0"
+            >
+              <div className="absolute inset-0 w-full h-full bg-white/20 rounded-full">
+                {i === index && (
+                  <motion.div
+                    className="h-full bg-brandGold rounded-full"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 7, ease: "linear" }}
+                  />
+                )}
+                {i < index && (
+                  <div className="h-full w-full bg-brandGold rounded-full" />
+                )}
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
     </section>
   );

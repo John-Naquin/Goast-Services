@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaTwitter, FaLinkedin, FaFacebookF, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaFacebookF, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock, FaHeadset } from "react-icons/fa";
 
 export function Footer() {
   return (
@@ -34,15 +34,11 @@ export function Footer() {
             <div className="mt-6 space-y-3">
               <div className="flex items-center">
                 <FaPhoneAlt className="text-brandGold mr-3 flex-shrink-0" />
-                <span className="text-sm text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-sm text-gray-300">+1 (850) 982-7559</span>
               </div>
               <div className="flex items-center">
                 <FaEnvelope className="text-brandGold mr-3 flex-shrink-0" />
-                <span className="text-sm text-gray-300">info@goastservices.com</span>
-              </div>
-              <div className="flex items-start">
-                <FaMapMarkerAlt className="text-brandGold mr-3 mt-1 flex-shrink-0" />
-                <span className="text-sm text-gray-300">123 Automation Way, Suite 100<br />Tech City, CA 91234</span>
+                <span className="text-sm text-gray-300">Kimmies@goastservices.com</span>
               </div>
             </div>
           </div>
@@ -58,21 +54,13 @@ export function Footer() {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link to="/about" className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
-                  About Us
-                </Link>
-              </li>
+
               <li>
                 <Link to="/services" className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
                   Services
                 </Link>
               </li>
-              <li>
-                <Link to="/projects" className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
-                  Projects
-                </Link>
-              </li>
+    
               <li>
                 <Link to="/contact" className="text-gray-400 hover:text-brandGold transition-colors duration-200 inline-block py-1">
                   Contact
@@ -122,21 +110,29 @@ export function Footer() {
           
           <div className="md:col-span-12 lg:col-span-3">
             <h3 className="text-lg font-semibold text-white relative inline-block mb-4">
-              Stay Connected
+              Why Choose Us
               <div className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-brandGold"></div>
             </h3>
-            <p className="text-sm text-gray-400 mb-4">
-              Subscribe to our newsletter for industry insights and company updates.
-            </p>
-            <div className="flex space-x-1">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="bg-gray-800 border border-gray-700 rounded-l-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-brandGold focus:border-brandGold text-white w-full"
-              />
-              <button className="bg-brandGold hover:bg-brandGold/90 text-gray-900 font-medium rounded-r-lg px-4 py-2 text-sm transition-colors duration-200">
-                Subscribe
-              </button>
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <div className="p-2 bg-brandGold/20 rounded-full mr-3 mt-1">
+                  <FaClock className="text-brandGold w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-white text-sm font-medium">21+ Years of Experience</p>
+                  <p className="text-gray-400 text-xs">Trusted expertise in automation</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="p-2 bg-brandGold/20 rounded-full mr-3 mt-1">
+                  <FaHeadset className="text-brandGold w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-white text-sm font-medium">24/7 Support Available</p>
+                  <p className="text-gray-400 text-xs">Always ready to assist you</p>
+                </div>
+              </div>
             </div>
           
             <div className="mt-6">

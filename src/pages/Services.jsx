@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ServiceCard } from "../components/ServiceCard";
 
 function Services() {
@@ -9,7 +9,7 @@ function Services() {
       description:
         "We design, install, and maintain advanced Building Automation Systems (BAS) to help businesses optimize energy use, improve system performance, and reduce operational costs.",
       capabilities: [
-        "Custom BAS solutions tailored to your facility’s needs.",
+        "Custom BAS solutions tailored to your facility's needs.",
         "Integration with HVAC, lighting, and energy systems.",
         "Migration from outdated legacy systems to modern solutions.",
         "Real-time system monitoring and remote access.",
@@ -28,7 +28,7 @@ function Services() {
       description:
         "At Goast Services, we understand that proactive maintenance is key to keeping your building systems running efficiently and avoiding costly failures. Our Preventative Maintenance Programs are designed to minimize downtime, extend equipment life, and optimize system performance.",
       capabilities: [
-        "Customized Maintenance Plans: Tailored service contracts to meet your facility’s specific needs. Flexible scheduling options to minimize disruptions. Coverage for Building Automation Systems (BAS), HVAC, electrical systems, and more.",
+        "Customized Maintenance Plans: Tailored service contracts to meet your facility's specific needs. Flexible scheduling options to minimize disruptions. Coverage for Building Automation Systems (BAS), HVAC, electrical systems, and more.",
         "Regular Inspections & System Health Checks: Comprehensive system evaluations to detect early signs of wear or malfunction. Performance testing and calibration to ensure optimal efficiency. Detailed service reports with recommendations.",
         "Emergency Service & Rapid Response: 24/7 on-call support for contract clients. Priority response times to minimize operational disruptions. Quick troubleshooting and problem resolution.",
         "Predictive Maintenance & Performance Tracking: Remote monitoring to identify issues before they become critical failures. Trend analysis to optimize maintenance schedules and reduce energy waste.",
@@ -45,7 +45,7 @@ function Services() {
       title: "Troubleshooting & Problem Restoration",
       subtitle: "Fast, Reliable Solutions to Restore Performance",
       description:
-        "We specialize in diagnosing and resolving system malfunctions efficiently. Whether it’s a BAS, HVAC, or electrical issue, our team identifies problems quickly and restores functionality with minimal downtime.",
+        "We specialize in diagnosing and resolving system malfunctions efficiently. Whether it's a BAS, HVAC, or electrical issue, our team identifies problems quickly and restores functionality with minimal downtime.",
       capabilities: [
         "Comprehensive Diagnostics & Root Cause Analysis: We thoroughly assess system performance, identifying faults in automation controls, electrical wiring, and HVAC components.",
         "On-Site & Remote Troubleshooting: Prompt responses to on-site needs plus remote diagnostics to reduce unnecessary visits.",
@@ -123,36 +123,68 @@ function Services() {
   ];
 
   const [selectedServiceIndex, setSelectedServiceIndex] = useState(0);
+  
+  useEffect(() => {
+    const storedIndex = localStorage.getItem('selectedServiceIndex');
+    if (storedIndex !== null) {
+      setSelectedServiceIndex(Number(storedIndex));
+      localStorage.removeItem('selectedServiceIndex');
+    }
+  }, []);
+  
+  const handleSelectChange = (e) => {
+    const index = Number(e.target.value);
+    setSelectedServiceIndex(index);
+  };
 
   return (
-    <section className="min-h-screen bg-gray-100 pt-20 sm:pt-24 pb-12 px-6 sm:px-12 lg:px-24">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-brandGold">Our Services</h2>
-        <p className="text-lg text-gray-700 mt-2">Select a service to learn more.</p>
+    <section className="min-h-screen relative py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute left-0 top-0 w-1/3 h-1/3 bg-gray-100 opacity-30 rounded-br-3xl" />
+        <div className="absolute right-0 bottom-0 w-1/3 h-1/3 bg-brandGold opacity-5 rounded-tl-3xl" />
+        <div className="absolute left-1/4 top-1/4 w-64 h-64 bg-brandGold/5 rounded-full blur-3xl" />
+        <div className="absolute right-1/4 bottom-1/3 w-32 h-32 border border-brandGold/10 rounded-full" />
       </div>
 
-      <div className="mt-8 flex flex-col items-center">
-        <label htmlFor="service-select" className="mb-2 font-medium">
-          Choose a service:
-        </label>
-        <select
-          id="service-select"
-          value={selectedServiceIndex}
-          onChange={(e) => setSelectedServiceIndex(Number(e.target.value))}
-          className="border border-gray-300 rounded-md px-3 py-2"
-        >
-          {services.map((service, index) => (
-            <option key={index} value={index}>
-              {service.title}
-            </option>
-          ))}
-        </select>
-      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="mb-16 text-center">
+          <span className="uppercase text-sm font-medium tracking-widest text-gray-500">What We Offer</span>
+          <div className="h-1 w-12 bg-brandGold mx-auto mt-2 rounded-full" />
+          <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+            Our <span className="text-brandGold">Services</span>
+          </h2>
+          <p className="text-lg text-gray-700 mt-4 max-w-2xl mx-auto">
+            Select a service to learn more about how we can help optimize your facility's performance.
+          </p>
+        </div>
 
+        <div className="mt-8 flex justify-center">
+          <div className="relative w-full max-w-md">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-brandGold/50 to-amber-500/50 rounded-md blur-sm"></div>
+            <select
+              id="service-select"
+              value={selectedServiceIndex}
+              onChange={handleSelectChange}
+              className="relative w-full appearance-none bg-white border border-brandGold/20 rounded-md px-4 py-3 text-gray-700 font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-brandGold focus:border-transparent"
+            >
+              {services.map((service, index) => (
+                <option key={index} value={index}>
+                  {service.title}
+                </option>
+              ))}
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <svg className="h-5 w-5 text-brandGold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </div>
+        </div>
 
-      <div className="mt-8 flex justify-center">
-        <div className="w-full max-w-3xl">
-          <ServiceCard {...services[selectedServiceIndex]} />
+        <div className="mt-12 flex justify-center">
+          <div className="w-full max-w-4xl mx-auto">
+            <ServiceCard {...services[selectedServiceIndex]} />
+          </div>
         </div>
       </div>
     </section>

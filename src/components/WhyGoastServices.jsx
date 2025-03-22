@@ -13,10 +13,9 @@ export function WhyGoastServices() {
   ];
 
   return (
-    <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute left-0 top-0 w-1/3 h-1/3 bg-brandGold opacity-5 rounded-br-full" />
-        <div className="absolute right-0 bottom-0 w-1/3 h-1/3 bg-gray-100 opacity-30 rounded-tl-3xl" />
         <div className="absolute left-1/4 bottom-1/4 w-64 h-64 bg-brandGold/5 rounded-full blur-3xl" />
         <div className="absolute right-1/4 top-1/3 w-32 h-32 border border-brandGold/20 rounded-full" />
         <div className="absolute right-1/3 top-1/4 w-16 h-16 border border-brandGold/30 rounded-full" />
@@ -48,7 +47,7 @@ export function WhyGoastServices() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Why <span className="text-brandGold">Goast</span> Services?
+            <span className="text-white">Why</span> <span className="text-brandGold">Goast</span> <span className="text-white">Services</span>
           </motion.h2>
         </div>
 
@@ -62,7 +61,7 @@ export function WhyGoastServices() {
           >
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-brandGold/20 to-transparent blur-sm rounded-lg" />
-              <div className="relative bg-white/80 backdrop-blur-sm p-6 rounded-lg border border-brandGold/10 shadow-md space-y-6">
+              <div className="relative bg-white backdrop-blur-sm p-6 rounded-lg border border-brandGold/10 shadow-md space-y-6">
                 <p className="text-xl text-gray-700 leading-relaxed">
                   At <span className="font-semibold text-brandGold">Goast Services</span>, we deliver customized, high-performance automation strategies tailored to each facility's needs. With 21+ years of expertise, we help clients optimize operations, reduce costs, and ensure long-term reliability.
                 </p>

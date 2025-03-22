@@ -45,7 +45,7 @@ export function Footer() {
               </div>
               <div className="flex items-center">
                 <FaEnvelope className="text-brandGold mr-3 flex-shrink-0" />
-                <span className="text-sm text-gray-300">info@goastservices.com</span>
+                <span className="text-sm text-gray-300">Kimmies@goastservices.com</span>
               </div>
               
             </div>

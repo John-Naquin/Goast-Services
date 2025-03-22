@@ -75,16 +75,7 @@ export function Contact() {
                       </div>
                     </div>
                     
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-brandGold/90 rounded-full">
-                        <FiMapPin className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <p className="text-white/70 mb-1 text-sm">Our Office</p>
-                        <p className="font-medium">123 Automation Way, Suite 100</p>
-                        <p className="font-medium">Tech City, FL 32501</p>
-                      </div>
-                    </div>
+                  
                   </div>
                   
                   <div className="absolute bottom-10 left-10 w-20 h-20 border-b-4 border-l-4 border-brandGold/20 rounded-bl-2xl"></div>

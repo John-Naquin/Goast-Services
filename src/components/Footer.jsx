@@ -47,10 +47,7 @@ export function Footer() {
                 <FaEnvelope className="text-brandGold mr-3 flex-shrink-0" />
                 <span className="text-sm text-gray-300">info@goastservices.com</span>
               </div>
-              <div className="flex items-start">
-                <FaMapMarkerAlt className="text-brandGold mr-3 mt-1 flex-shrink-0" />
-                <span className="text-sm text-gray-300">123 Automation Way, Suite 100<br />Tech City, CA 91234</span>
-              </div>
+              
             </div>
           </div>
           
@@ -178,7 +175,7 @@ export function Footer() {
         
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Goast Services. All rights reserved. <span className="hidden sm:inline">|</span><br className="sm:hidden" /> <Link to="/privacy" className="hover:text-brandGold transition-colors duration-200">Privacy Policy</Link> | <Link to="/terms" className="hover:text-brandGold transition-colors duration-200">Terms of Service</Link>
+            © {new Date().getFullYear()} Goast Services. All rights reserved. 
           </p>
         </div>
       </div>

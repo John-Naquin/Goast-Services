@@ -41,7 +41,7 @@ export function Footer() {
             <div className="mt-6 space-y-3">
               <div className="flex items-center">
                 <FaPhoneAlt className="text-brandGold mr-3 flex-shrink-0" />
-                <span className="text-sm text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-sm text-gray-300">+1 (850) 982-7559</span>
               </div>
               <div className="flex items-center">
                 <FaEnvelope className="text-brandGold mr-3 flex-shrink-0" />

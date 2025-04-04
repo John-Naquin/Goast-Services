@@ -143,20 +143,7 @@ export function Footer() {
               </div>
             </div>
           
-            <div className="mt-6">
-              <h4 className="text-sm font-medium text-gray-300 mb-3">Follow Us</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-brandGold hover:text-brandDark transition-colors duration-200">
-                  <FaTwitter className="w-5 h-5" />
-                </a>
-                <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-brandGold hover:text-brandDark transition-colors duration-200">
-                  <FaLinkedin className="w-5 h-5" />
-                </a>
-                <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-brandGold hover:text-brandDark transition-colors duration-200">
-                  <FaFacebookF className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+            
           </div>
         </div>
         

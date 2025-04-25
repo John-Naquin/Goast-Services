@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import image1 from "../images/1.jpg";
+import front_bottom from "../images/front_bottom.jpg";
 
 export function About() {
   return (
@@ -59,7 +60,7 @@ export function About() {
             
             <div className="relative z-0 h-full">
               <img 
-                src={image1} 
+                src={front_bottom} 
                 alt="Goast Services automation solution in action" 
                 className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                 style={{ height: "100%", objectFit: "cover" }}

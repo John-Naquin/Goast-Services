@@ -4,33 +4,37 @@ import { Link } from "react-router-dom";
 import { FiChevronLeft, FiChevronRight, FiArrowRight } from "react-icons/fi";
 import image1 from "../images/1.jpg";
 import image2 from "../images/2.jpg";
+import front1 from "../images/front1.jpg";
+import front2 from "../images/front2.jpg";
+import front3 from "../images/front3.jpg";
+import front4 from "../images/front4.jpg";
 
 const slides = [
   {
     title: "Building Automation & Controls",
     description: "We provide top-notch services to help your business grow.",
-    image: image1,
+    image: front1,
     buttonText: "Learn More",
     buttonLink: "/services",
   },
   {
     title: "Preventative Maintenance & Contracts",
     description: "Stay ahead of downtime with our tailored solutions.",
-    image: image2,
+    image: front2,
     buttonText: "Our Services",
     buttonLink: "/services",
   },
   {
     title: "Troubleshooting & Problem Restoration",
     description: "Our experts are on call to get your system back on track.",
-    image: image1,
+    image: front3,
     buttonText: "Contact Us",
     buttonLink: "/contact",
   },
   {
     title: "Remote Monitoring & Trend Analysis",
     description: "Keep track of performance and spot issues before they arise.",
-    image: image2,
+    image: front4,
     buttonText: "Get Started",
     buttonLink: "/contact",
   },
